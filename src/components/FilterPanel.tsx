@@ -31,10 +31,11 @@ export default function FilterPanel({
   const visibleTags = isTagsExpanded ? tags : tags.slice(0, INITIAL_VISIBLE_COUNT);
 
   return (
-    <div className="space-y-6 py-2">
+    <div className="space-y-6 py-2 touch-manipulation">
       {/* Categories Section */}
       <div>
         <button 
+          type="button"
           onClick={() => setIsCategoriesExpanded(!isCategoriesExpanded)}
           className="flex items-center justify-between w-full mb-3 group"
         >
@@ -52,6 +53,7 @@ export default function FilterPanel({
         
         <div className="flex flex-wrap gap-2 transition-all duration-300 ease-in-out">
           <button
+            type="button"
             onClick={() => onCategorySelect(null)}
             className={`px-3 py-1.5 rounded-full text-[11px] font-medium transition-all ${
               selectedCategory === null
@@ -64,6 +66,7 @@ export default function FilterPanel({
           {visibleCategories.map((cat) => (
             <button
               key={cat}
+              type="button"
               onClick={() => onCategorySelect(cat)}
               className={`px-3 py-1.5 rounded-full text-[11px] font-medium transition-all ${
                 selectedCategory === cat
@@ -80,6 +83,7 @@ export default function FilterPanel({
       {/* Tags Section */}
       <div>
         <button 
+          type="button"
           onClick={() => setIsTagsExpanded(!isTagsExpanded)}
           className="flex items-center justify-between w-full mb-3 group"
         >
@@ -99,6 +103,7 @@ export default function FilterPanel({
           {visibleTags.map((tag) => (
             <button
               key={tag}
+              type="button"
               onClick={() => onTagToggle(tag)}
               className={`px-3 py-1.5 rounded-full text-[11px] font-medium transition-all ${
                 selectedTags.includes(tag)

@@ -15,12 +15,47 @@ export default function MessagePreview({ message }: MessagePreviewProps) {
 
   const handleCopy = async () => {
     if (!message) return;
+    
+    const textToCopy = message.body;
+    
+    // Try modern Clipboard API first
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        return;
+      } catch (err) {
+        console.error("Clipboard API failed, trying fallback", err);
+      }
+    }
+
+    // Fallback: Use a temporary hidden textarea
     try {
-      await navigator.clipboard.writeText(message.body);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      const textArea = document.createElement("textarea");
+      textArea.value = textToCopy;
+      
+      // Ensure the textarea is not visible but part of the DOM
+      textArea.style.position = "fixed";
+      textArea.style.left = "-9999px";
+      textArea.style.top = "0";
+      document.body.appendChild(textArea);
+      
+      textArea.focus();
+      textArea.select();
+      
+      const successful = document.execCommand("copy");
+      document.body.removeChild(textArea);
+      
+      if (successful) {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } else {
+        throw new Error("execCommand copy failed");
+      }
     } catch (err) {
-      console.error("Failed to copy!", err);
+      console.error("Fallback copy failed", err);
+      alert("Could not copy to clipboard. Please try manually.");
     }
   };
 
@@ -63,7 +98,7 @@ export default function MessagePreview({ message }: MessagePreviewProps) {
       </div>
 
       {/* Primary Focus: Message Body */}
-      <div className="flex-1 p-5 sm:p-8 overflow-y-auto bg-transparent">
+      <div className="flex-1 p-4 sm:p-8 overflow-y-auto bg-transparent">
         <div className="prose dark:prose-invert max-w-none">
           <div className="whitespace-pre-wrap text-gray-800 dark:text-zinc-100 leading-relaxed text-lg sm:text-xl font-medium tracking-tight">
             {message.body}

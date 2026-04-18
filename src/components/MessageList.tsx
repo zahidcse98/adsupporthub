@@ -19,15 +19,16 @@ export default function MessageList({ messages, selectedId, onSelect }: MessageL
   }
 
   return (
-    <div className="space-y-2 pb-10">
+    <div className="space-y-2 pb-20 touch-manipulation">
       {messages.map((message) => (
         <button
           key={message.id}
+          type="button"
           onClick={() => onSelect(message.id)}
-          className={`w-full text-left p-3 rounded-xl transition-all border ${
+          className={`w-full text-left p-3 rounded-xl transition-all border relative z-10 active:scale-[0.98] ${
             selectedId === message.id
               ? "bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800 shadow-sm"
-              : "bg-white dark:bg-zinc-900 border-gray-100 dark:border-zinc-800 hover:border-blue-200 dark:hover:border-zinc-700 hover:shadow-sm"
+              : "bg-white dark:bg-zinc-900 border-gray-100 dark:border-zinc-800 hover:border-blue-200 dark:hover:border-zinc-700 hover:shadow-sm active:bg-gray-50 dark:active:bg-zinc-800"
           }`}
         >
           <div className="flex justify-between items-start gap-2">
