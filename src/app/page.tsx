@@ -69,7 +69,7 @@ export default function Home() {
   };
 
   return (
-    <main className="h-screen flex flex-col bg-background text-foreground selection:bg-blue-100 dark:selection:bg-blue-900/40 overflow-hidden">
+    <main className="h-[100dvh] flex flex-col bg-background text-foreground selection:bg-blue-100 dark:selection:bg-blue-900/40 overflow-hidden">
       {/* Header */}
       <header className={cn(
         "bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl border-b border-gray-100 dark:border-zinc-900 px-4 sm:px-6 py-4 transition-all duration-300 shrink-0",
@@ -80,9 +80,9 @@ export default function Home() {
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
               <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <div className="hidden xsm:block">
-              <h1 className="text-lg sm:text-xl font-bold tracking-tight">ADSupportHub</h1>
-              <p className="hidden sm:block text-[10px] text-gray-400 font-semibold uppercase tracking-widest leading-none">Message Library</p>
+            <div className="flex flex-col justify-center">
+              <h1 className="text-sm sm:text-xl font-bold tracking-tight leading-none">ADSupportHub</h1>
+              <p className="block text-[7px] sm:text-[10px] text-gray-400 font-semibold uppercase tracking-widest leading-none mt-1">Support Message Library</p>
             </div>
           </div>
           
@@ -151,7 +151,7 @@ export default function Home() {
                   </div>
                 </div>
               )}
-              <div className="flex-1 overflow-hidden mb-6 lg:mb-0">
+              <div className="flex-1 overflow-hidden mb-12 lg:mb-0">
                 <MessagePreview message={messages.find(m => m.id === selectedMessageId) || null} />
               </div>
             </div>

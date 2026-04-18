@@ -17,8 +17,8 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="block w-full pl-10 sm:pl-11 pr-10 sm:pr-12 py-3 sm:py-4 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl sm:rounded-2xl leading-5 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-sm group-hover:shadow-md text-sm sm:text-base"
-        placeholder="Search messages..."
+        className="block w-full pl-10 sm:pl-11 pr-10 sm:pr-12 py-3 sm:py-4 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl sm:rounded-2xl leading-5 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-sm group-hover:shadow-md text-sm sm:text-base"
+        placeholder="Search by title, content, tags or keywords..."
       />
       {value && (
         <button

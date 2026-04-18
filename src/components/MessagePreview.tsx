@@ -1,7 +1,7 @@
 "use client";
 
 import { Message } from "@/types";
-import { Copy, Check, Share2, Info } from "lucide-react";
+import { Copy, Check, Share2, Info, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -107,13 +107,17 @@ export default function MessagePreview({ message }: MessagePreviewProps) {
       </div>
 
       {/* Expandable Secondary Info: Category, Tags, Keywords */}
-      <div className="border-t border-gray-100 dark:border-zinc-800">
+      <div className="border-t border-gray-100 dark:border-zinc-800 shrink-0 bg-gray-50/50 dark:bg-zinc-900/50">
         <button 
+          type="button"
           onClick={() => setIsDetailsExpanded(!isDetailsExpanded)}
-          className="w-full px-5 py-3 flex items-center justify-between text-xs font-bold text-gray-400 uppercase tracking-widest hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition-colors"
+          className="w-full px-5 py-4 flex items-center justify-between text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-zinc-800/50 transition-colors"
         >
-          <span>Message Details</span>
-          <Info className={`w-4 h-4 transition-transform ${isDetailsExpanded ? "rotate-180" : ""}`} />
+          <div className="flex items-center gap-2">
+            <Info className="w-3.5 h-3.5" />
+            <span>Message Details</span>
+          </div>
+          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDetailsExpanded ? "rotate-180" : ""}`} />
         </button>
         
         <AnimatePresence>
@@ -122,12 +126,12 @@ export default function MessagePreview({ message }: MessagePreviewProps) {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden bg-gray-50/50 dark:bg-black/20"
+              className="overflow-hidden"
             >
-              <div className="p-5 flex flex-col gap-4">
+              <div className="px-5 pb-8 flex flex-col gap-5">
                 {/* Category & Tags */}
                 <div>
-                  <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Classification</h4>
+                  <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Classification</h4>
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="px-2 py-1 rounded-md text-[10px] font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
                       {message.category}
@@ -142,12 +146,12 @@ export default function MessagePreview({ message }: MessagePreviewProps) {
 
                 {/* Keywords */}
                 <div>
-                  <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Search Keywords</h4>
+                  <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Search Keywords</h4>
                   <div className="flex flex-wrap gap-2">
                     {message.keywords.map((kw) => (
                       <span
                         key={kw}
-                        className="px-2 py-1 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg text-[10px] text-gray-500 dark:text-gray-400"
+                        className="px-2 py-1 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg text-[10px] text-gray-500 dark:text-gray-400 shadow-sm"
                       >
                         {kw}
                       </span>
