@@ -1,0 +1,515 @@
+[
+  {
+  "id": "1",
+  "title": "Warm Welcome & Greeting",
+  "body": "Hello, \n\nThank you for reaching out to us. We hope you’re doing well. We truly appreciate you contacting our support team. Please let us know how we can assist you today, and we’ll be more than happy to help. \n\nLooking forward to your message. \n\nBest regards, \nAppDevs Support Team",
+  "category": "General Communication",
+  "tags": ["greeting", "welcome", "first response", "polite"],
+  "keywords": ["hello", "hi", "welcome", "start", "support"]
+},
+{
+  "id": "2",
+  "title": "Request for Installation Credentials",
+  "body": "Hello, \n To investigate and resolve your issue effectively, \n we kindly request you to provide the following credentials for installation on your server. \n Purchase Information: Purchase Code, Product Key, Project Domain. \n Server Access:\n - Login URL,\n - Email,\n - Password. \n Database Access:\n - Database Name,\n - Database Username,\n - Database Password. \n Please be assured that all information will be used strictly for troubleshooting and handled securely. \n We look forward to your response.",
+  "category": "Credentials & Security",
+  "tags": ["credentials request", "server access", "database access", "installation"],
+  "keywords": ["login details", "purchase code", "server credentials", "database info"]
+}
+  ,
+  {
+    "id": "3",
+    "title": "Refund Not Available but Support Offered",
+    "body": "Hello, While we are unable to offer a refund, we are fully committed to resolving your issues. Please share your issue list so we can assist you.",
+    "category": "Refund & Policy",
+    "tags": ["no refund", "support help"],
+    "keywords": ["cannot refund", "help instead", "resolve issue"]
+  },
+  {
+    "id": "4",
+    "title": "Request to Update Review",
+    "body": "Hello, We’re glad your issue has been resolved. If you’re satisfied, we would appreciate it if you could update your review on CodeCanyon.",
+    "category": "Reviews & Feedback",
+    "tags": ["review update", "rating"],
+    "keywords": ["change review", "update rating", "feedback"]
+  },
+  {
+    "id": "5",
+    "title": "General Feedback Request",
+    "body": "Hello, If you are satisfied with our product and support, we would greatly appreciate your feedback. Your input helps us improve our service.",
+    "category": "Reviews & Feedback",
+    "tags": ["feedback", "review"],
+    "keywords": ["give review", "rating", "customer feedback"]
+  },
+  {
+    "id": "6",
+    "title": "Contact Sales for Customization",
+    "body": "Hello, For customization services, please contact our sales team here: https://appdevs.net/sales-support",
+    "category": "Sales & Customization Services",
+    "tags": ["sales", "customization"],
+    "keywords": ["contact sales", "custom work", "paid service"]
+  },
+  {
+    "id": "7",
+    "title": "Schedule Customization Meeting",
+    "body": "Hello, You can schedule a consultation with our team here: https://appdevs.net/consultation to discuss your project requirements.",
+    "category": "Sales & Customization Services",
+    "tags": ["meeting", "consultation"],
+    "keywords": ["book meeting", "project discussion", "call support"]
+  },
+  {
+    "id": "8",
+    "title": "App Store / Play Store Rejection",
+    "body": "Hello, App approval depends on Google Play and Apple App Store policies. These decisions are beyond our control. Please review their guidelines or contact their support.",
+    "category": "App Store / Play Store",
+    "tags": ["app rejection", "store policy"],
+    "keywords": ["app rejected", "playstore issue", "appstore problem"]
+  },
+  {
+    "id": "9",
+    "title": "Purchase Code Requirement",
+    "body": "Hello, The purchase code is required to verify your license and ensure valid support. Please provide it so we can assist you.",
+    "category": "General Communication",
+    "tags": ["purchase code", "verification"],
+    "keywords": ["license", "verify purchase", "codecanyon code"]
+  },
+  {
+    "id": "10",
+    "title": "Multiple Tickets Warning",
+    "body": "Hello, We noticed multiple tickets for the same issue. Please continue with a single ticket to ensure faster and clearer communication.",
+    "category": "Support Process",
+    "tags": ["multiple tickets", "support management"],
+    "keywords": ["duplicate ticket", "many tickets", "support confusion"]
+  },
+  {
+    "id": "11",
+    "title": "Handling Frustrated Client",
+    "body": "Hello, We understand your frustration and sincerely apologize. Please allow us some time to investigate the issue. We are committed to resolving it for you.",
+    "category": "Difficult Situations",
+    "tags": ["frustration", "client handling"],
+    "keywords": ["angry client", "not happy", "complaint"]
+  },
+  {
+    "id": "12",
+    "title": "Negative Review Response",
+    "body": "Hello, We’re sorry to hear about your experience. We believe the issue may not be directly related to our system, but we are still here to help. Kindly reconsider your review after resolution.",
+    "category": "Reviews & Feedback",
+    "tags": ["negative review", "clarification"],
+    "keywords": ["bad rating", "review complaint", "feedback issue"]
+  },
+  {
+    "id": "13",
+    "title": "Pirated Script Warning",
+    "body": "Hello, Using unauthorized or pirated scripts can lead to security risks and service suspension. We strongly recommend using licensed versions for safety and support.",
+    "category": "Security & Compliance",
+    "tags": ["piracy", "security"],
+    "keywords": ["nulled script", "illegal copy", "security risk"]
+  },
+  {
+    "id": "14",
+    "title": "Support Scope Limitation",
+    "body": "Hello, Some requests fall outside our standard support scope. For extended or complex assistance, we recommend using our paid services.",
+    "category": "Support Policy",
+    "tags": ["support limit", "paid support"],
+    "keywords": ["extra help", "support limit", "not included"]
+  },
+  {
+    "id": "15",
+    "title": "Issue Not Related to System",
+    "body": "Hello, After reviewing your case, the issue does not appear to be related to our system. However, we are happy to guide you if needed.",
+    "category": "General Technical",
+    "tags": ["external issue", "not our system"],
+    "keywords": ["not working", "external error", "other issue"]
+  },
+  {
+    "id": "16",
+    "title": "Request for AnyDesk Access",
+    "body": "Hello, To investigate and resolve your issue effectively, our technical team requires remote access via AnyDesk. Please share your AnyDesk ID and keep your system online so we can assist you.",
+    "category": "Live Support",
+    "tags": ["anydesk", "remote access"],
+    "keywords": ["remote support", "live help", "connect anydesk"]
+  },
+  {
+    "id": "17",
+    "title": "Share Source Code Instead",
+    "body": "Hello, If you are unable to provide AnyDesk access, you may share your project source code. Please upload it to Google Drive and send us the link for review.",
+    "category": "Support Process",
+    "tags": ["source code", "file sharing"],
+    "keywords": ["upload project", "share files", "zip code"]
+  },
+  {
+    "id": "18",
+    "title": "Request for Server and Admin Credentials",
+    "body": "Hello, To properly investigate your issue, please provide your server and admin panel credentials including login URLs, email, and password. This will help us resolve your issue quickly.",
+    "category": "Credentials & Security",
+    "tags": ["credentials", "server access"],
+    "keywords": ["login details", "admin access", "server login"]
+  },
+  {
+    "id": "19",
+    "title": "Data Security Assurance",
+    "body": "Hello, Please be assured that we do not store any sensitive client data. All credentials are used only for troubleshooting and are handled securely.",
+    "category": "Credentials & Security",
+    "tags": ["data security", "privacy"],
+    "keywords": ["safe data", "secure", "privacy policy"]
+  },
+  {
+    "id": "20",
+    "title": "Request for Issue Details",
+    "body": "Hello, Please provide a detailed description of the issue you are facing. Screenshots or screen recordings will help us understand the problem better.",
+    "category": "Support Process",
+    "tags": ["issue details", "bug report"],
+    "keywords": ["problem explain", "error details", "send screenshot"]
+  },
+  {
+    "id": "21",
+    "title": "Request for Full Issue List",
+    "body": "Hello, Kindly share a complete list of all the issues you are facing. This will help our technical team resolve everything efficiently.",
+    "category": "Support Process",
+    "tags": ["multiple issues", "bug list"],
+    "keywords": ["all problems", "issue list", "report bugs"]
+  },
+  {
+    "id": "22",
+    "title": "Awaiting Your Response",
+    "body": "Hello, We are waiting for your response to proceed further. Please provide the required information so we can continue assisting you.",
+    "category": "Support Process",
+    "tags": ["waiting", "follow up"],
+    "keywords": ["no reply", "pending", "waiting client"]
+  },
+  {
+    "id": "23",
+    "title": "Issue Under Investigation",
+    "body": "Hello, Our technical team is currently reviewing your issue. Please allow us some time to investigate. We will update you shortly.",
+    "category": "Support Process",
+    "tags": ["investigation", "review"],
+    "keywords": ["checking issue", "analysis", "debugging"]
+  },
+  {
+    "id": "24",
+    "title": "Escalated to Technical Team",
+    "body": "Hello, Your issue has been forwarded to our technical team. They are working on it and we will update you as soon as possible.",
+    "category": "Support Process",
+    "tags": ["escalation", "technical team"],
+    "keywords": ["forwarded", "developer check", "team working"]
+  },
+  {
+    "id": "25",
+    "title": "Delay Due to High Support Volume",
+    "body": "Hello, We apologize for the delay. Our support team is currently handling a high volume of requests. We appreciate your patience.",
+    "category": "General Communication",
+    "tags": ["delay", "support load"],
+    "keywords": ["late reply", "busy", "slow response"]
+  },
+  {
+    "id": "26",
+    "title": "Delay Due to Holidays",
+    "body": "Hello, We apologize for the delayed response due to holidays or non-working days. We are now back and will assist you shortly.",
+    "category": "General Communication",
+    "tags": ["holiday delay", "weekend"],
+    "keywords": ["late due to holiday", "weekend delay"]
+  },
+  {
+    "id": "27",
+    "title": "Support Hours Information",
+    "body": "Hello, Our support hours are Monday to Friday, 9:00 AM – 6:30 PM (GMT+6). Please contact us within this time for faster assistance.",
+    "category": "General Communication",
+    "tags": ["support hours", "availability"],
+    "keywords": ["working time", "office hours", "when available"]
+  },
+  {
+    "id": "28",
+    "title": "Stay Online for Live Support",
+    "body": "Hello, Our technical team will connect with you shortly. Please stay online and keep your system ready for the session.",
+    "category": "Live Support",
+    "tags": ["live session", "anydesk"],
+    "keywords": ["stay online", "ready", "support session"]
+  },
+  {
+    "id": "29",
+    "title": "Network Issue Blocking Support",
+    "body": "Hello, We are unable to proceed with live support due to a network issue on your side. Please resolve your connection issue and inform us.",
+    "category": "Live Support",
+    "tags": ["network issue", "connection problem"],
+    "keywords": ["internet issue", "cannot connect", "anydesk failed"]
+  },
+  {
+    "id": "30",
+    "title": "Friendly Follow-Up",
+    "body": "Hello, Just following up on your issue. Please let us know if you still need assistance or if everything is working fine.",
+    "category": "General Communication",
+    "tags": ["follow up", "reminder"],
+    "keywords": ["check status", "still issue", "followup"]
+  },
+  {
+    "id": "31",
+    "title": "Issue Resolved Confirmation",
+    "body": "Hello, Your issue has been resolved. Please check on your side and confirm if everything is working properly.",
+    "category": "Support Process",
+    "tags": ["resolved", "confirmation"],
+    "keywords": ["fixed", "check now", "solution done"]
+  },
+  {
+    "id": "32",
+    "title": "Request to Close Ticket",
+    "body": "Hello, If everything is working properly, may we proceed with closing this ticket? You can always reach out again if needed.",
+    "category": "Support Process",
+    "tags": ["ticket closing", "completion"],
+    "keywords": ["close ticket", "done", "finish support"]
+  },
+  {
+    "id": "33",
+    "title": "Ticket Closed Due to No Response",
+    "body": "Hello, We have not received a response from you in the last 72 hours. We are closing this ticket for now. Feel free to open a new one anytime.",
+    "category": "Support Process",
+    "tags": ["no response", "ticket closed"],
+    "keywords": ["inactive", "no reply", "closed ticket"]
+  },
+  {
+    "id": "34",
+    "title": "Support Not Available for Modified Code",
+    "body": "Hello, We sincerely apologize for the inconvenience. If the script has been modified with custom code, issues arising from those changes fall outside our support scope. We only provide support for the original, unmodified codebase.",
+    "category": "Customization & Development",
+    "tags": ["code modification", "unsupported"],
+    "keywords": ["custom code", "modified script", "not supported"]
+  },
+  {
+    "id": "35",
+    "title": "Why Modified Code Cannot Be Supported",
+    "body": "Hello, We understand your effort in customizing the script. However, modified code makes it difficult to investigate issues properly. For this reason, we are unable to support problems caused by custom changes.",
+    "category": "Customization & Development",
+    "tags": ["custom code limitation", "support policy"],
+    "keywords": ["code issue", "custom change", "support limitation"]
+  },
+  {
+    "id": "36",
+    "title": "Use Customization Service for Changes",
+    "body": "Hello, If you require changes or new features, we recommend using our customization service. This ensures compatibility and allows us to provide proper support. Additional charges will apply.",
+    "category": "Sales & Customization Services",
+    "tags": ["customization service", "paid service"],
+    "keywords": ["custom feature", "paid development", "modify system"]
+  },
+  {
+    "id": "37",
+    "title": "Custom Feature Implementation Option",
+    "body": "Hello, Thank you for your suggestion. If you need this feature urgently, we can implement it through our customization service. Our team will work specifically on your project. Additional charges will apply.",
+    "category": "Sales & Customization Services",
+    "tags": ["feature request", "custom development"],
+    "keywords": ["urgent feature", "custom work", "new function"]
+  },
+  {
+    "id": "38",
+    "title": "Custom Changes Lost After Update",
+    "body": "Hello, Please note that updating your system will overwrite previous custom changes. The new version includes a fresh codebase. We recommend keeping a backup before updating.",
+    "category": "Installation & Updates",
+    "tags": ["update warning", "custom changes"],
+    "keywords": ["update issue", "lost changes", "version upgrade"]
+  },
+  {
+    "id": "39",
+    "title": "Follow Documentation for Updates",
+    "body": "Hello, We have provided detailed documentation for the update process. Please follow each step carefully. If needed, you can use our installation service for assistance.",
+    "category": "Installation & Updates",
+    "tags": ["documentation", "update guide"],
+    "keywords": ["how to update", "installation guide", "version help"]
+  },
+  {
+    "id": "40",
+    "title": "Sequential Version Update Required",
+    "body": "Hello, Please update your system step by step. Skipping versions may cause compatibility issues. Follow the correct upgrade path to avoid errors.",
+    "category": "Installation & Updates",
+    "tags": ["version upgrade", "sequential update"],
+    "keywords": ["skip version", "upgrade error", "update steps"]
+  },
+  {
+    "id": "41",
+    "title": "App and Web Version Mismatch",
+    "body": "Hello, Your app and web versions are not aligned. Please ensure both are updated to the same version to avoid unexpected issues.",
+    "category": "Installation & Updates",
+    "tags": ["version mismatch", "sync issue"],
+    "keywords": ["app error", "web error", "version problem"]
+  },
+  {
+    "id": "42",
+    "title": "Installation Service Not Included",
+    "body": "Hello, Installation is not included for free. We provide documentation for self-installation. You may use our paid installation service for a hassle-free setup.",
+    "category": "Installation & Updates",
+    "tags": ["installation policy", "paid service"],
+    "keywords": ["setup help", "installation cost", "deploy system"]
+  },
+  {
+    "id": "43",
+    "title": "Professional Installation Service Offer",
+    "body": "Hello, We offer a professional installation service including branding setup, server deployment, and app publishing. This ensures a smooth and complete setup experience.",
+    "category": "Sales & Customization Services",
+    "tags": ["installation package", "deployment"],
+    "keywords": ["setup service", "app deployment", "install help"]
+  },
+  {
+    "id": "44",
+    "title": "Installation Issue Due to Incorrect Steps",
+    "body": "Hello, The issue appears to be caused by not following the installation steps correctly. Please review the documentation carefully and complete each step properly.",
+    "category": "Installation & Updates",
+    "tags": ["installation error", "documentation"],
+    "keywords": ["setup issue", "wrong install", "fix installation"]
+  },
+  {
+    "id": "45",
+    "title": "Production System Update Limitation",
+    "body": "Hello, Updating a live system can be complex. For this reason, free support for production updates is limited. We recommend using our paid service for safe updates.",
+    "category": "Installation & Updates",
+    "tags": ["production system", "update limitation"],
+    "keywords": ["live site update", "production issue", "upgrade risk"]
+  },
+  {
+    "id": "46",
+    "title": "Basic Setup Issue",
+    "body": "Hello, The issue seems related to basic setup steps. Please follow the documentation carefully to resolve it.",
+    "category": "Installation & Updates",
+    "tags": ["beginner issue", "setup"],
+    "keywords": ["basic error", "setup problem", "installation help"]
+  },
+  {
+    "id": "47",
+    "title": "Recommended for Non-Technical Users",
+    "body": "Hello, If you are not familiar with technical setup, we recommend using our installation service. Our team will handle everything for you.",
+    "category": "Sales & Customization Services",
+    "tags": ["non technical", "installation help"],
+    "keywords": ["no experience", "setup help", "easy install"]
+  },
+  {
+    "id": "48",
+    "title": "Update Responsibility Clarification",
+    "body": "Hello, Updates must be applied by following our documentation. If you face difficulties, we can guide you or provide paid assistance.",
+    "category": "Installation & Updates",
+    "tags": ["update responsibility", "support"],
+    "keywords": ["update help", "version issue", "installation support"]
+  },
+  {
+    "id": "49",
+    "title": "Custom Gateway Integration Not Supported",
+    "body": "Hello, If you have modified the system by adding a custom payment gateway on your own and are facing issues, we’re unable to assist in that case. Custom code changes fall outside the scope of our standard support. However, you may share the gateway documentation with us for review, or use our customization service for proper integration.",
+    "category": "Payment Gateways",
+    "tags": ["custom gateway", "unsupported", "code modification"],
+    "keywords": ["gateway issue", "custom integration", "modified code", "payment error"]
+  },
+  {
+    "id": "50",
+    "title": "Available Card Issuing Options",
+    "body": "Hello, We’re sorry for the inconvenience. Please note that multiple card issuing options are already available in the system. You may explore those alternatives and choose the one that best fits your business needs.",
+    "category": "Payment Gateways",
+    "tags": ["card issuing", "alternatives"],
+    "keywords": ["card option", "payment option", "virtual card", "gateway"]
+  },
+  {
+    "id": "51",
+    "title": "Strowallet Card Pending Issue",
+    "body": "Hello, We sincerely apologize for the inconvenience. The issue originates from Strowallet’s system, where newly created cards remain in a pending state. Once activated from their side, the card will reflect properly in your system.",
+    "category": "Strowallet Issues",
+    "tags": ["strowallet", "pending card", "api issue"],
+    "keywords": ["card not showing", "pending", "strowallet error"]
+  },
+  {
+    "id": "52",
+    "title": "Waiting for Strowallet Response",
+    "body": "Hello, Our technical team is currently in contact with Strowallet support regarding this issue. Since it depends on their system, resolution may take some time. We will update you once we receive progress.",
+    "category": "Strowallet Issues",
+    "tags": ["delay", "third-party"],
+    "keywords": ["waiting", "no update", "strowallet delay"]
+  },
+  {
+    "id": "53",
+    "title": "Strowallet Requires Valid User Data",
+    "body": "Hello, This issue is related to Strowallet’s verification process. Their system requires valid user data such as ID, email, phone number, and address. Invalid data may cause cards to remain pending.",
+    "category": "Strowallet Issues",
+    "tags": ["kyc", "verification"],
+    "keywords": ["user data", "verification failed", "kyc issue"]
+  },
+  {
+    "id": "54",
+    "title": "Strowallet Fix in Progress",
+    "body": "Hello, Our technical team is actively working with Strowallet to resolve this issue. It may take approximately 2–3 working days. We appreciate your patience.",
+    "category": "Strowallet Issues",
+    "tags": ["fix ongoing", "timeline"],
+    "keywords": ["fix time", "resolution", "strowallet update"]
+  },
+  {
+    "id": "55",
+    "title": "Issue Will Be Fixed in Update",
+    "body": "Hello, This issue will be reviewed by our technical team and, if confirmed, will be resolved in an upcoming version update. You will be able to download it from CodeCanyon.",
+    "category": "General Technical",
+    "tags": ["bug fix", "update"],
+    "keywords": ["future update", "version fix", "bug"]
+  },
+  {
+    "id": "56",
+    "title": "Strowallet Card Details Viewing",
+    "body": "Hello, After creating a card using Strowallet, users must click the 'Details' button to view full card information. This is how their API is designed to function.",
+    "category": "Strowallet Issues",
+    "tags": ["card details", "ui behavior"],
+    "keywords": ["view card", "details button", "strowallet ui"]
+  },
+  {
+    "id": "57",
+    "title": "Feature Not Included Due to API Differences",
+    "body": "Hello, This feature is not currently included because different APIs require different implementations. However, we may consider it in future updates or provide it via customization.",
+    "category": "Customization & Development",
+    "tags": ["feature limitation", "api dependency"],
+    "keywords": ["feature request", "not available", "custom feature"]
+  },
+  {
+    "id": "58",
+    "title": "Payment Gateway Limitation Explained",
+    "body": "Hello, There are many payment gateways globally, and it is not feasible to include all of them. However, we continue to improve the system based on demand. You may also request custom integration.",
+    "category": "Payment Gateways",
+    "tags": ["limitation", "system scope"],
+    "keywords": ["why not available", "gateway missing", "payment limitation"]
+  },
+  {
+    "id": "59",
+    "title": "Strowallet Static Field Requirement",
+    "body": "Hello, Some fields like country, state, and city are fixed based on Strowallet’s API requirements. Only certain fields like ZIP code can be modified.",
+    "category": "Strowallet Issues",
+    "tags": ["configuration", "api restriction"],
+    "keywords": ["field locked", "cannot change", "strowallet config"]
+  },
+  {
+    "id": "60",
+    "title": "Stripe Issue - External Limitation",
+    "body": "Hello, Stripe-related issues are controlled entirely by Stripe’s policies. We recommend contacting their support team directly for proper guidance.",
+    "category": "Stripe & Third-Party",
+    "tags": ["stripe", "third-party"],
+    "keywords": ["stripe error", "rejection", "payment issue"]
+  },
+  {
+    "id": "61",
+    "title": "Stripe Region Limitation",
+    "body": "Hello, Stripe currently supports virtual card APIs only in the USA and UK. If you are outside these regions, you may face limitations or rejection.",
+    "category": "Stripe & Third-Party",
+    "tags": ["region limitation", "stripe api"],
+    "keywords": ["country restriction", "stripe not working"]
+  },
+  {
+    "id": "62",
+    "title": "Stripe Alternative Options",
+    "body": "Hello, You can use alternatives such as Flutterwave, Sudo Africa, Strowallet, or Checkbook instead of Stripe. Additional gateways can be integrated via customization.",
+    "category": "Payment Gateways",
+    "tags": ["stripe alternative", "gateway options"],
+    "keywords": ["alternative payment", "replace stripe"]
+  },
+  {
+    "id": "63",
+    "title": "Refund Request Not Eligible",
+    "body": "Hello, We sincerely apologize for any inconvenience. However, your request does not meet the conditions of our refund policy, and we are unable to process a refund.",
+    "category": "Refund & Policy",
+    "tags": ["refund", "policy"],
+    "keywords": ["refund request", "money back", "not eligible"]
+  },
+  {
+    "id": "64",
+    "title": "Refund Policy Clarification",
+    "body": "Hello, As per our refund policy, refunds are not applicable for accidental purchases. Please review our policy here: https://appdevs.net/refund-policy",
+    "category": "Refund & Policy",
+    "tags": ["refund policy", "accidental purchase"],
+    "keywords": ["policy link", "refund rules", "purchase mistake"]
+  }
+]
