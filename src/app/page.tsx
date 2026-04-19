@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import messagesData from "@/data/messages.json";
-import { Message, Category, Tag } from "@/types";
-import SearchBar from "@/components/SearchBar";
 import FilterPanel from "@/components/FilterPanel";
 import MessageList from "@/components/MessageList";
 import MessagePreview from "@/components/MessagePreview";
-import { MessageSquare, Library, ArrowLeft, ChevronLeft, RotateCcw } from "lucide-react";
+import SearchBar from "@/components/SearchBar";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import messagesData from "@/data/messages.json";
 import { cn } from "@/lib/utils";
+import { Category, Message, Tag } from "@/types";
+import { ChevronLeft, Library, MessageSquare, RotateCcw } from "lucide-react";
+import { useMemo, useState } from "react";
 
 const messages = messagesData as Message[];
 
@@ -134,7 +134,7 @@ export default function Home() {
                 {hasActiveFilters && (
                   <button
                     onClick={handleResetFilters}
-                    className="flex items-center gap-1.5 text-[10px] font-bold text-blue-600 hover:text-blue-700 uppercase tracking-tighter transition-all active:scale-95"
+                    className="flex items-center gap-1.5 text-[10px] font-bold text-blue-600 hover:text-blue-700 uppercase tracking-tighter transition-all active:scale-95 cursor-pointer"
                   >
                     <RotateCcw className="w-3 h-3" />
                     Reset Filters

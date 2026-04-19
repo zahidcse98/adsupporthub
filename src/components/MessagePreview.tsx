@@ -1,9 +1,9 @@
 "use client";
 
 import { Message } from "@/types";
-import { Copy, Check, Share2, Info, ChevronDown } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Check, ChevronDown, Copy, Info } from "lucide-react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface MessagePreviewProps {
   message: Message | null;
@@ -79,14 +79,14 @@ export default function MessagePreview({ message }: MessagePreviewProps) {
       className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm h-full flex flex-col"
     >
       {/* Compact Header: Focus on Title and Copy Action */}
-      <div className="p-4 sm:p-6 border-b border-gray-100 dark:border-zinc-800 flex items-center justify-between gap-4">
+      <div className="p-4 sm:p-6 border-b border-gray-100 dark:border-zinc-800 flex items-center justify-between gap-4 bg-zinc-50/50 dark:bg-zinc-900/50">
         <h2 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight flex-1">
           {message.title}
         </h2>
         
         <button
           onClick={handleCopy}
-          className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all shrink-0 ${
+          className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all shrink-0 cursor-pointer ${
             copied
               ? "bg-green-500 text-white"
               : "bg-blue-600/10 hover:bg-blue-600 text-blue-600 hover:text-white border border-blue-600/20"
@@ -107,7 +107,7 @@ export default function MessagePreview({ message }: MessagePreviewProps) {
       </div>
 
       {/* Expandable Secondary Info: Category, Tags, Keywords */}
-      <div className="border-t border-gray-100 dark:border-zinc-800 shrink-0 bg-gray-50/50 dark:bg-zinc-900/50">
+      <div className="border-t border-gray-100 dark:border-zinc-800 shrink-0 bg-zinc-50/50 dark:bg-zinc-900/50">
         <button 
           type="button"
           onClick={() => setIsDetailsExpanded(!isDetailsExpanded)}
