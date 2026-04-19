@@ -7,7 +7,7 @@ import SearchBar from "@/components/SearchBar";
 import FilterPanel from "@/components/FilterPanel";
 import MessageList from "@/components/MessageList";
 import MessagePreview from "@/components/MessagePreview";
-import { MessageSquare, Library, ArrowLeft, ChevronLeft } from "lucide-react";
+import { MessageSquare, Library, ArrowLeft, ChevronLeft, RotateCcw } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 
@@ -68,6 +68,13 @@ export default function Home() {
     setShowMobilePreview(true);
   };
 
+  const handleResetFilters = () => {
+    setSelectedCategory(null);
+    setSelectedTags([]);
+  };
+
+  const hasActiveFilters = selectedCategory !== null || selectedTags.length > 0;
+
   return (
     <main className="h-[100dvh] flex flex-col bg-background text-foreground selection:bg-blue-100 dark:selection:bg-blue-900/40 overflow-hidden">
       {/* Header */}
@@ -122,7 +129,18 @@ export default function Home() {
             </div>
             
             <div className="shrink-0 pb-20 lg:pb-0">
-              <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 px-2">Results ({filteredMessages.length})</h2>
+              <div className="flex items-center justify-between mb-4 px-2">
+                <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest">Results ({filteredMessages.length})</h2>
+                {hasActiveFilters && (
+                  <button
+                    onClick={handleResetFilters}
+                    className="flex items-center gap-1.5 text-[10px] font-bold text-blue-600 hover:text-blue-700 uppercase tracking-tighter transition-all active:scale-95"
+                  >
+                    <RotateCcw className="w-3 h-3" />
+                    Reset Filters
+                  </button>
+                )}
+              </div>
               <MessageList
                 messages={filteredMessages}
                 selectedId={selectedMessageId}
