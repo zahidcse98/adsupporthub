@@ -1,4 +1,4 @@
-import { decrypt } from "@/lib/session";
+import { decrypt } from "@/lib/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function proxy(req: NextRequest) {
