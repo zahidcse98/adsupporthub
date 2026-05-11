@@ -5,30 +5,41 @@ import MessageList from "@/components/MessageList";
 import MessagePreview from "@/components/MessagePreview";
 import SearchBar from "@/components/SearchBar";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import messagesData from "@/data/messages.json";
 import { cn } from "@/lib/utils";
 import { Category, Message, Tag } from "@/types";
 import { ChevronLeft, Library, MessageSquare, RotateCcw } from "lucide-react";
-import { useMemo, useState } from "react";
-
-const messages = messagesData as Message[];
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 export default function Home() {
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [messagesLoading, setMessagesLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
-  const [selectedMessageId, setSelectedMessageId] = useState<string | null>(messages[0]?.id || null);
+  const [selectedMessageId, setSelectedMessageId] = useState<string | null>(null);
   const [showMobilePreview, setShowMobilePreview] = useState(false);
+  const [shortcutCopied, setShortcutCopied] = useState(false);
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    fetch("/api/messages")
+      .then((r) => r.json())
+      .then((data: Message[]) => {
+        setMessages(data);
+        setSelectedMessageId(data[0]?.id ?? null);
+      })
+      .finally(() => setMessagesLoading(false));
+  }, []);
 
   // Derived data
   const categories = useMemo(() => {
     return Array.from(new Set(messages.map((m) => m.category))).sort();
-  }, []);
+  }, [messages]);
 
   const tags = useMemo(() => {
     const allTags = messages.flatMap((m) => m.tags);
     return Array.from(new Set(allTags)).sort();
-  }, []);
+  }, [messages]);
 
   const filteredMessages = useMemo(() => {
     return messages.filter((m) => {
@@ -51,7 +62,7 @@ export default function Home() {
 
       return matchesSearch && matchesCategory && matchesTags;
     });
-  }, [searchQuery, selectedCategory, selectedTags]);
+  }, [messages, searchQuery, selectedCategory, selectedTags]);
 
   const selectedMessage = useMemo(() => {
     return filteredMessages.find((m) => m.id === selectedMessageId) || null;
@@ -75,6 +86,67 @@ export default function Home() {
 
   const hasActiveFilters = selectedCategory !== null || selectedTags.length > 0;
 
+  // ── Keyboard shortcuts ───────────────────────────────────────────────────
+
+  const copySelectedMessage = useCallback(async (body: string) => {
+    try {
+      await navigator.clipboard.writeText(body);
+      setShortcutCopied(true);
+      setTimeout(() => setShortcutCopied(false), 2000);
+    } catch {
+      // clipboard unavailable — silently ignore
+    }
+  }, []);
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      const target = e.target as HTMLElement;
+      const inInput =
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.isContentEditable;
+
+      // / → focus search
+      if (e.key === "/" && !inInput) {
+        e.preventDefault();
+        searchRef.current?.focus();
+        searchRef.current?.select();
+        return;
+      }
+
+      // Escape → blur search
+      if (e.key === "Escape" && inInput) {
+        (target as HTMLInputElement).blur();
+        return;
+      }
+
+      // ↑ ↓ → navigate list (skip when typing)
+      if ((e.key === "ArrowDown" || e.key === "ArrowUp") && !inInput) {
+        e.preventDefault();
+        if (filteredMessages.length === 0) return;
+        const idx = filteredMessages.findIndex((m) => m.id === selectedMessageId);
+        const next =
+          e.key === "ArrowDown"
+            ? idx < filteredMessages.length - 1 ? idx + 1 : 0
+            : idx > 0 ? idx - 1 : filteredMessages.length - 1;
+        setSelectedMessageId(filteredMessages[next].id);
+        return;
+      }
+
+      // Ctrl/Cmd+C → copy selected message when no text is highlighted
+      if ((e.ctrlKey || e.metaKey) && e.key === "c") {
+        if (window.getSelection()?.toString()) return; // let browser copy selection
+        const msg = filteredMessages.find((m) => m.id === selectedMessageId);
+        if (!msg) return;
+        e.preventDefault();
+        copySelectedMessage(msg.body);
+      }
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [filteredMessages, selectedMessageId, copySelectedMessage]);
+
   return (
     <main className="h-[100dvh] flex flex-col bg-background text-foreground selection:bg-blue-100 dark:selection:bg-blue-900/40 overflow-hidden">
       {/* Header */}
@@ -94,7 +166,7 @@ export default function Home() {
           </div>
           
           <div className="flex-1 max-w-xl">
-            <SearchBar value={searchQuery} onChange={setSearchQuery} />
+            <SearchBar ref={searchRef} value={searchQuery} onChange={setSearchQuery} />
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
@@ -102,7 +174,7 @@ export default function Home() {
                <Library className="w-4 h-4" />
                <span>{filteredMessages.length}</span>
              </div>
-             <ThemeToggle />
+<ThemeToggle />
           </div>
         </div>
       </header>
@@ -111,7 +183,15 @@ export default function Home() {
         "max-w-7xl mx-auto px-4 sm:px-6 transition-all duration-300 w-full flex-1 overflow-hidden",
         showMobilePreview ? "py-2" : "py-6 sm:py-8"
       )}>
-        <div className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 h-full">
+        {messagesLoading ? (
+          <div className="flex items-center justify-center h-full">
+            <div className="flex flex-col items-center gap-3 text-gray-400">
+              <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+              <p className="text-sm">Loading messages…</p>
+            </div>
+          </div>
+        ) : null}
+        <div className={cn("flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 h-full", messagesLoading && "hidden")}>
           {/* Left Panel: Filters and List */}
           <aside className={cn(
             "w-full lg:col-span-4 flex flex-col gap-6 h-full overflow-y-auto lg:pr-2 custom-scrollbar transition-all duration-300",
@@ -145,7 +225,34 @@ export default function Home() {
                 messages={filteredMessages}
                 selectedId={selectedMessageId}
                 onSelect={handleMessageSelect}
+                searchQuery={searchQuery}
+                hasActiveFilters={hasActiveFilters}
+                onClearSearch={() => setSearchQuery("")}
+                onClearFilters={handleResetFilters}
               />
+
+              {/* Keyboard shortcuts hint */}
+              <div className="hidden lg:flex items-center justify-center gap-4 pt-4 pb-2 border-t border-gray-100 dark:border-zinc-800 mt-4 shrink-0">
+                {([
+                  { keys: ["↑", "↓"], label: "Navigate" },
+                  { keys: ["/"], label: "Search" },
+                  { keys: ["Ctrl", "C"], label: "Copy" },
+                ] as const).map(({ keys, label }) => (
+                  <div key={label} className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-0.5">
+                      {keys.map((k) => (
+                        <kbd
+                          key={k}
+                          className="px-1.5 py-0.5 bg-gray-100 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded text-[9px] font-mono font-semibold text-gray-500 dark:text-zinc-400"
+                        >
+                          {k}
+                        </kbd>
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-gray-400 dark:text-zinc-500">{label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </aside>
 
@@ -176,6 +283,15 @@ export default function Home() {
           </section>
         </div>
       </div>
+
+      {/* Ctrl+C copy toast */}
+      {shortcutCopied && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-2.5 bg-gray-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-semibold rounded-xl shadow-lg pointer-events-none">
+          <span>✓</span>
+          <span>Message copied</span>
+          <kbd className="ml-1 px-1.5 py-0.5 bg-white/20 dark:bg-black/10 rounded text-[10px] font-mono">Ctrl+C</kbd>
+        </div>
+      )}
     </main>
   );
 }
